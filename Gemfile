@@ -1,0 +1,1 @@
+gem 'active_record_playground_runner', "~> 0.1.0", github: "bhserna/active_record_playground_runner", branch: "main"

@@ -1,0 +1,42 @@
+GIT
+  remote: https://github.com/bhserna/active_record_playground_runner.git
+  revision: a032eb5e4f7091ab176aaa328a242616d99b325e
+  branch: main
+  specs:
+    active_record_playground_runner (0.1.0)
+      activerecord (~> 7.0)
+      activesupport (~> 7.0)
+      ffaker (~> 2.21)
+      pg (~> 1.3)
+      zeitwerk (~> 2.6.0)
+
+GEM
+  specs:
+    activemodel (7.0.3.1)
+      activesupport (= 7.0.3.1)
+    activerecord (7.0.3.1)
+      activemodel (= 7.0.3.1)
+      activesupport (= 7.0.3.1)
+    activesupport (7.0.3.1)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 1.6, < 2)
+      minitest (>= 5.1)
+      tzinfo (~> 2.0)
+    concurrent-ruby (1.1.10)
+    ffaker (2.21.0)
+    i18n (1.12.0)
+      concurrent-ruby (~> 1.0)
+    minitest (5.16.2)
+    pg (1.4.3)
+    tzinfo (2.0.5)
+      concurrent-ruby (~> 1.0)
+    zeitwerk (2.6.0)
+
+PLATFORMS
+  x86_64-darwin-21
+
+DEPENDENCIES
+  active_record_playground_runner (~> 0.1.0)!
+
+BUNDLED WITH
+   2.2.3
