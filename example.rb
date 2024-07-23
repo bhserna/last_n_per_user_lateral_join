@@ -98,16 +98,19 @@ example "In a has many association" do
 
   class Post < ActiveRecord::Base
     scope :last_n_per_user, ->(n) {
+      selected_posts_table = Arel::Table.new('selected_posts')
+
       sql = <<-SQL
         JOIN LATERAL (
           SELECT * FROM posts
           WHERE user_id = users.id
           ORDER BY id DESC LIMIT :limit
-        ) AS selected_posts ON TRUE
+        ) AS #{selected_posts_table.name} ON TRUE
       SQL
 
       selected_posts = User
-        .select("selected_posts.*")
+        .select(User.arel_table["id"].as("user_id"))
+        .select(Post.column_names.excluding("user_id").map { |column| selected_posts_table[column] })
         .joins(User.sanitize_sql([sql, limit: n]))
 
       from(selected_posts, "posts")
